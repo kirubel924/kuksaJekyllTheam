@@ -1,0 +1,2633 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title> | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Kuksa Documentation</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/M3SResearch/kuksadoc" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kuksa Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Kuksa</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">kuksa first release</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">kuksa second release</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the  page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main"></h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/kuksaTraining1/Architecture.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <blockquote>
+  <h1 id="2-eclipse-kuksa-ecosystem"><strong>2. Eclipse Kuksa Ecosystem</strong></h1>
+</blockquote>
+
+<h2 id="21-eclipse-kuksa">2.1 Eclipse Kuksa</h2>
+<p>|Kuksa IDE|
+|———|
+|Based on Eclipse Che
+|Allows Cloud and In-Vehicle Application development
+|Platform independent
+|Shared workspaces
+|Almost configuration free
+|Docker-based: VPN planned to allow remote / network independent cross compilation|</p>
+
+<p><img src="/ImageFile/EclipsKuksaEcosystem.png" alt="EclipsKuksaEcosystem" /></p>
+
+<p><em>Figure 1. Eclipse Kuksa Ecosystem.</em></p>
+
+<p><em>(source:https://www.researchgate.net/profile/Marco_Wagner2/publication/330281127_Innovation_through_Openness_-_The_Open_Source_Connected_Vehicle_Framework_Eclipse_Kuksa/links/5c371b5892851c22a3691df8/Innovation-through-Openness-The-Open-Source-Connected-Vehicle-Framework-Eclipse-Kuksa.pdf?origin=publication_detail)</em></p>
+
+<blockquote>
+  <h1 id="3-appstacle-environment-architecture"><strong>3. APPSTACLE environment architecture</strong></h1>
+</blockquote>
+
+<p>The overall platform of the security-relevant aspects of the APPSTACLE environment architecture is divided in to three building blocks:</p>
+<blockquote>
+  <ol>
+    <li>In-vehicle platform,</li>
+    <li>5G Infrastructure, and</li>
+    <li>Cloud back-end.</li>
+  </ol>
+</blockquote>
+
+<p>The above mentioned building blocks comprises a set of components which communicates between components of the same building block and/or components of different blocks.</p>
+
+<blockquote>
+  <h1 id="3-1-in-vehicle-platform"><strong>3. 1. In-Vehicle Platform</strong></h1>
+</blockquote>
+
+<p>The APPSTACLE environment is created to provide addon services to the connected vehicles. This provides a complite functionality of the vehicles through deploying the <em>Apps</em> on the in-vehicle platform. Therefore, three layers of components are required to enable this purpose:</p>
+
+<p><strong>3.1.1.1 Core Layer</strong>: Contains the in-vehicle platform components, such as operating system and application runtime. It, furthermore, allows the vehicle owner to interact with the vehicle, e.g., via smartphone access. In addition, it provides an intrface to the 5G infrastructure similar to the core layer of the cloud back-end.</p>
+
+<p><strong>3.1.1.2 API / Binding Layer</strong>: consists of relevant APIs and components for internal and external communication.</p>
+
+<p><strong>3.1.1.3 Application Layer</strong>: It represents the arrangement of all Apps that are running within the in-vehicle platform. Some of the Eclipse base Open source solutions to inreach kuksa components are:</p>
+<ul>
+  <li>Automotive Grade Linux (AGL)</li>
+  <li>Eclipse hawkBit</li>
+  <li>Eclipse Hono</li>
+  <li>Eclipse Ditto</li>
+  <li>Eclipse Che</li>
+  <li>Keycloak</li>
+  <li>…</li>
+</ul>
+
+<p><img src="../ImageFile/kuksaComponents.png" width="750" height="300" /></p>
+
+<p><em>Figure 2. Eclipse base Open source solutions to inreach kuksa components</em></p>
+
+<p><em>(source:https://www.researchgate.net/profile/Marco_Wagner2/publication/330281127_Innovation_through_Openness_-_The_Open_Source_Connected_Vehicle_Framework_Eclipse_Kuksa/links/5c371b5892851c22a3691df8/Innovation-through-Openness-The-Open-Source-Connected-Vehicle-Framework-Eclipse-Kuksa.pdf?origin=publication_detail)</em></p>
+
+<p>The in-vehicle platform addtionally provides means for rertrieving telemetry data collected by the vehicle itself as well as a human machine interface (HMI ) for user interaction.</p>
+
+<h2 id="312-in-vehicle-connectivity-">3.1.2 In-vehicle connectivity :</h2>
+
+<p>This section provides an overview of the communication protocols that are currently used in the existing automotive architectures as well as their interconnections in the Electrical / Electronic (E/E) in-vehicle architecture.
+The scope of these protocols defines the in-vehicle communication interfaces for
+the APPSTACLE platform.</p>
+
+<h2 id="3121-protocols">3.1.2.1 Protocols</h2>
+
+<p>Automotive protocols are classified by the Society of Automotive Engineers (SAE) into four categories according to the transmission rate and their role in the automotive architecture. Specifically, Class A defines the protocols that are used for convenience systems (e.g. lighting, windows, seatcontrols) and require inexpensive, low-speed communication. Class B defines the protocols supporting instrument cluster or vehicle speed communication and require medium-speed communication. Furthermore, Class C is defined for real-time control ECUs such as the engine, braking and steer-by-wire and require high-speed communication. Finally, telematics systems usually require higher communication speed for multimedia (audio / video) and navigation, and therefore SAE defined the additional Class D communications. All four protocol Class categories are illustrated in <span style="color:lightblue">Table 1</span> along with the protocols that belong to each category and are used for in-vehicle communication in terms of their characteristics.</p>
+
+<p><img src="/ImageFile/AutomotiveNetwork.png" alt="AutomotiveNetwork" /></p>
+
+<p>Firugre 3. Automotive Network.</p>
+
+<p>### <em>Table 1.: Characteristics of the communication protocols</em></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bus</th>
+      <th>LIN</th>
+      <th>CAN</th>
+      <th>CAN FD</th>
+      <th>FlexRay</th>
+      <th>MOST</th>
+      <th>Automotive Ethernet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Used in Application domains Message transmission Access control Maximum Data Rate Protocol Class</td>
+      <td>Subnets Body Soft Synchronous Polling 20 kbps A</td>
+      <td>Soft real-time Powertrain, Chassis Asynchronous CSMA/CA 1 Mbps BC</td>
+      <td>Soft real-time a a CSMA/CA 10 Mbps D</td>
+      <td>Hard real-time Chassis, Powertrain Synchronous and Asynchronous TDMA 10 Mbps D</td>
+      <td>Multimedia Multimedia and Telematics Synchronous and Asynchronous CSMA/CA 24Mbps D</td>
+      <td>Multimedia Telematics and active safety Synchronous and Asynchronous CSMA/CD 100Mbps D</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>## 3.1.2.2 Architectural Overview of In-vehicle</p>
+
+<p>Modern automotive embedded systems consist of several subsystems, which are comprised of one
+or several Electronic Control Units (ECUs). In turn, the ECUs are made up of a micro-controller
+and a set of sensors and actuators. They are able to communicate through the transmission of
+electronic or optical signals through a dedicated communication unit. The subsystems that rely on network communication in automotive systems are divided into five main categories: power train, chassis, body, HMI, and telematics (illustrated in <span style="color:lightblue">Figure 3</span>). Each subsystem uses a different protocol to communicate, which is selected based on the architectural requirements and the subsystem functionality. Specifically, the powertrain domain is related to the systems that participate in the longitudinal propulsion of the vehicle,including engine, transmission and all subsidiary components. This domain is supported by a dedicated subsystem called Drive CAN using the Controller Area Network (CAN) for data exchange. The chassis domain refers to the four wheels and their relative position and movement; in this domain the systems are mainly steering and braking. In this subsystem category we find two protocols that are used for high-critical communication, namely CAN and FlexRay, as well as the Local Interconnect Network (LIN) for the lower critical functionalities (e.g. door locking, window raising / lowering). According to the EAST-EEA 1 project definition the body domain includes the entities that do not belong to the vehicle dynamics (i.e., being those that support the car’s user) such as airbags, wipers, lighting, etc. Today’s cars sometimes use two CAN buses (peripheral CAN and body CAN) which interconnect the ECUs of the comfort domain. The telematics domain includes the equipment allowing information exchange between electronic systems and the driver (displays and switches). Such interactions are possible through the infotainment subsystem that is supported by the MOST protocol. Finally additional peripheral systems (e.g.,cameras) allow the in-vehicle system to monitor and extract information from its physical environment through the use of Automotive Ethernet technologies. All the aforementioned systems are able to exchange data through a central gateway (<span style="color:lightblue">Figure 3</span>) that is able to map (through packet encapsulation) or forward messages from one subsystem to another.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Property</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1.</td>
+      <td>It enables communication with the infotainment unit or the ECUs internal to the vehicle</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td>• Telemetry data or data specified in the Cloud platform related to internal vehicle functionalities.</td>
+      <td>• Vehicle diagnostics (e.g. health monitoring).</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• System metadata (which components are present, heartbeats etc)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>3.</td>
+      <td>• Interacts with the in-vehicle HW for data gathering and with the ex-vehicle connectivity for data forwarding</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>4.</td>
+      <td>• One component per vehicle with different interfaces according to the employed protocols.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>5.</td>
+      <td>• Information about the protocols used in the internal vehicle architecture</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Depending on the chosen protocols: what components are communicating what information</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Development of software modules for handling data for each protocol</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="313-ex-vehicle-connectivity-concept">3.1.3 Ex-vehicle connectivity concept:</h2>
+
+<p>The technology evolution in the automotive vehicles contributed to the demands for smarter mobility solutions. These solutions are focused on several types of V2X communication:</p>
+
+<p>• Vehicle-2-Vehicle (V2V)</p>
+
+<p>• Vehicle-2-Infrastructure/Infrastructure-2-Vehicle (V2I,I2V)</p>
+
+<p>• Vehicle-2-Pedestrian (V2P) / Pedestrian-2-Vehicle (P2V)</p>
+
+<p>• Vehicle-2-Network (V2N) / Network-2-Vehicle (N2V), 5) Infrastructure-2-Network (I2N) /
+Network-2-Infrastructure (N2I).</p>
+
+<p>These types along with their interactions are demonstrated in <span style="color:lightblue">Figure 4</span>.</p>
+
+<p><img src="/ImageFile/V2XCommunicationType.png" alt="V2XCommunicationType" /></p>
+
+<p><em>Figure 4. V2X communication types</em></p>
+
+<p>The units supporting V2X communication are:</p>
+
+<p>• <em>RoadSide unit (RSU)</em>: It is connected to road sensors (e.g. induction loops, cameras) and
+a local control center, such that it performs actions or exchanges critical information other
+vehicles or servers about road or traffic management.</p>
+
+<p>• <em>OnBoard unit (OBU)</em>: The on-board unit (OBU) is a radio built-in vehicle device mounted on
+each vehicle that transmits vehicle data (i.e. identification and location) to a transponder. The OBU itself is a transponder, that is, a data exchange takes place automatically and only on
+request of one of the participating devices. It allows Vehicle-to-Vehicle (V2V) and Vehicle-to-Infrastructure (V2I, I2V) communications with other OBUs or RSUs.</p>
+
+<p>• <em>Backend server</em> : It is composed by a PKI, traffic management and roadside unit management
+servers, all accessible via the RSU’s or cellular base stations.
+In order to facilitate this evolution a couple of solutions were defined that are split into 3 main categories:</p>
+
+<p>• <em>5G radio access technologies</em>: This technology provides wide area, broadband access. The
+5G technology is currently in the process of conceptual development and standardization by
+the World Radiocommunication Conference (WRC). The 5G technology is expected to have
+a specific V2X aspect of the 5G technology in a practical scale after 2020. However, in this
+document we are leveraging the limited standardization to illustrate conceptually its main scope
+and architectural view.</p>
+
+<p>• <em>Pre-5G radio access technologies</em>: Multiple cellular technologies were identified by the ETSI
+3rd Generation Partnership Project (3GPP), LoRa Alliance and other organizations, such as
+Narrowband IoT , Long Term Evolution for Machines (LTE-M), LoRA are considered. Even though these technologies are already used in V2P/P2V, the main challenge when adopting them in other V2X communication types are reliability and safety, which are currently not addressed in the scope of Low-Power Wide Area Networks (LPWAN).</p>
+
+<p>• <em>Non-cellular technologies providing wireless access</em>: IEEE has defined different standards for wireless communication, such as 802.11ac and 802.11p, however only 802.11p is flexible in
+terms of throughput and offers higher reliability, even though its maximal throughout is more
+limited than 802.11ac (from 3 to 27 Mbps raw data rate). The reason behind this is that
+802.11p was designed particularly for for safety-related Vehicular Ad-hoc NETworks (VANET),
+including the V2V and V2I/I2V concepts. IEEE 802.11p technology is currently fully specified
+and already deployed in different locations. The following paragraphs start with a description of the scenarios supported by 802.11p communi-cation and cellular communication. This is followed by a description on both the 802.11p and 5G technologies. In the scope of this section we focus on these two technologies, because, to the best of our knowledge, they are considered as the leading candidates for V2X communication. <img src="../ReferenceFiles/.Appstacle_deliverable_1.1.pdf" alt="For detail information" /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Property</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1.</td>
+      <td>It enables outward and inward communication between the vehicle and the external entity</td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td>• No data processing as such.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Re-Packs the data received from bus to appropriate format for the external entity and vice versa.</td>
+    </tr>
+    <tr>
+      <td>3.</td>
+      <td>• It has the direct connection to the BUS and no direct user interaction.</td>
+    </tr>
+    <tr>
+      <td>4.</td>
+      <td>• There will be multiple instances in the minimum two cases.</td>
+    </tr>
+    <tr>
+      <td>5.</td>
+      <td>• Driver for hardware component</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• (Since Development Stage) Need manual configuration at the moment for 5G mm Radio.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="314-app-runtime-concept">3.1.4 App Runtime concept:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Property</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1.</td>
+      <td>The APP Runtime provides the environment for executing APPs and starts / stops APPs. It has to provide and control resources for the APP, enforce access control (permissions), and isolate APPs from each other.</td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td>APPs, configuration data (permissions, options, …), APP data</td>
+    </tr>
+    <tr>
+      <td>3.</td>
+      <td>The APP Runtime permits or denies communication between APPs, or APP and backend (depending on “the policy”). The APP Runtime obtains APPs from the marketplace. It can be configured by the OEM and/or the vehicle owner (via backend and/or an in-vehicle user interface; probably also by devices [with authorization]).</td>
+    </tr>
+    <tr>
+      <td>4.</td>
+      <td>There is one APP Runtime per in-vehicle platform. It could be part of the operating system.</td>
+    </tr>
+    <tr>
+      <td>5.</td>
+      <td>Initialisation / start up: The APP Runtime is started during the (secure) boot process. It can be configured by the OEM and the vehicle owner (details are left open in this document), e.g., to configure permissions (“the policy”).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="315-automotive-api-concept">3.1.5 Automotive API concept:</h2>
+
+<p>The Application Programming Interface (API) for vehicles are introduced and discussed in here. The automotive API’s try to achieve (a) merging the potentially very complex device and network structure of a car into a single virtual device and (b) hiding the differences between manufacturers, models and makes behind a common interface. On the other hand these interfaces strongly differ in their scope (data-subset or use-case), technological approach and creators.</p>
+
+<h3 id="3351-autosar">3.3.5.1 AUTOSAR</h3>
+
+<p>AUTomotive Open System ARchitecture (AUTOSAR) is a cooperation between car manufacturers,
+OEMs and tool manufacturers and defines a software development paradigm for Electronic Control
+Units (ECUs) in the automotive domain. In order to separate the development process of application software from the chosen ECU hardware platform, AUTOSAR is introducing a layer model with the three layers Application Software, Runtime Environment and Basic Software (illustrated IN <span style="color:lightblue">Figure 5</span>).</p>
+
+<p><img src="/ImageFile/AutosarLayerModel.png" alt="Autosar Layer Models" /></p>
+
+<p><em>Figure 4. Autosar Layers</em></p>
+
+<p>The top layer is formed by the application software. It is divided into software components, each of which realizes a part of the application and can consume and provide data via so-called ports. Any communication that does not take place via port connections is forbidden. A port is classified via a port interface (here referred to as interface). Two ports can only be connected to each other if both ports use compatible interfaces.
+Two important communication paradigms, that are selected by interfaces, are client-server and
+sender-receiver communication. For client-server communication, a server component provides
+functions (C, C++) which can be called by clients. A 1:n communication is also possible (i. e. a
+server can provide its functionality to several clients). In sender-receiver communication, a sender provides data that can be consumed by receiver components. Both 1:n and m:1 communication is possible here (i.e. a date can be consumed by several components or several senders provide a date for one receiver concurrently). Many-to-many communication is not provided.</p>
+
+<p>The lower layer consists of the basic software and contains the hardware drivers, the operating
+system and the communication stack. The communication stack handles communication from and
+to other ECUs that are connected via network interfaces like CAN, LIN, Flexray, automotive Ethernet, etc.</p>
+
+<p>All communication, whether between software components on the upper level or between software
+components and basic software on the lower level, is realized via the runtime environment (RTE),
+which forms the middle layer. The RTE specification document defines a schema for API functions (C, C++), which are usually generated by code generators of the AUTOSAR modeling tools according to the modeled communication between software components and basic software. All communication must take place via the (generated) API functions. Other communication is not permitted. Likewise, all communication interfaces must be defined at the time of development, which makes it impossible to dynamically extend the software architecture at runtime. <img src=".Appstacle_deliverable_1.1.pdf" alt="For detail information" /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Property</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1.</td>
+      <td>The Automotive API provides an interface to in-vehicle data for APPs (and cloud ser-vices? other entities??). An (operating system) service (“Automotive API server”) implements the Automotive API, for instance similar to the “Vehicle Information Service” specified by the W3C.</td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td>Vehicle data (sensor data, diagnosis information, configuration of vehicle compo-nents, vehicle status information, …)</td>
+    </tr>
+    <tr>
+      <td>3.</td>
+      <td>It can be used by APPs (and cloud services, etc.) to retrieve information from the vehicle, to send data to in-vehicle components, and to write (vehicle) configuration data.</td>
+    </tr>
+    <tr>
+      <td>4.</td>
+      <td>There is one Automotive API per in-vehicle platform.</td>
+    </tr>
+    <tr>
+      <td>5.</td>
+      <td>Initialisation / start up: The “Automotive API” service is started during the (secure) boot process.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="316-apps-concept">3.1.6 Apps concept:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Property</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1.</td>
+      <td>(In-vehicle) APPs are programs that provide new features to the vehicle.</td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td>App data (depends on APP / use case)</td>
+    </tr>
+    <tr>
+      <td>3.</td>
+      <td>APPs are executed and controlled by the APP Runtime and can access in-vehicle data via the Automotive API. They can communicate with other entities via con-nectivity APIs (cf. architecture picture). If permitted (by “the policy”), they might communicate with cloud services (backend providers) and other APPs, and they could interact with the driver via a GUI (if available). APPs can access resources via the APP Runtime (subject to “the policy”). A user can install APPs from the Marketplace in the vehicle.</td>
+    </tr>
+    <tr>
+      <td>4.</td>
+      <td>There can be multiple APPs per in-vehicle platform.</td>
+    </tr>
+    <tr>
+      <td>5.</td>
+      <td>Initialisation / start up: APPs are started by the APP Runtime. Configuration data depends on the APP / use case.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="317-device-management-client-concept">3.1.7 Device Management Client concept:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Property</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1.</td>
+      <td>The DM is responsible for keeping the devices compliant to the whole system land-scape. This starts with building up a base in communication and process protocols. It is also providing features for securely enrolling new devices, governing and con-figuring them while being out in the field, monitoring and debugging their behavior remotely and maintaining the devices with software updates. Four subjects can be distinguished:</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Enrollment includes provisioning and authentication for bringing new devices into an IoT landscape. The authentication assures that only trust-worthy devices are added to the network and connected to cloud services. Also only authorized users should be able to bring in new devices and gain access according to their roles granted.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Governing contains features for controlling and configuring devices. As IT systems are often under a constant development, some parts change and so do some of their constants, for example network addresses or ports.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Monitoring keeps an eye on all components of the system and their status. Reports and alerts for incidents are raised and logged. An on-time awareness of system issues is enabled. For diagnosis and solving software bugs it is also imperative to load log dumps remotely from devices.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Maintenance with the ability to distribute and apply software updates is the fourth subject. The device management assures that the update is delivered and applied to the device according to the present constraints. Feedback mechanisms answer back to the cloud for a detailed status of the update.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td><strong>Process</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• System states</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Application states</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Update states</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Management Calls</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Push Calls</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Alarms</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Enrollment policies</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Updates, Update scheduling</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Inventory Hardware/Software listings</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Communication requests</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong>Provide</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Access to resources through OMA-DM Management Objects (http://www.openmobilealliance.org/wp/OMNA/LwM2M/LwM2MRegistry.html)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– Management access through LwM2M)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Push Service (for notifying in-vehicle Applications form the cloud)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Monitoring Service</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Update Service (Maintanance)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Keep-Alive Signal Service</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Inventory Hardware/Software</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Enrollment Service</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Control Service (e.g. shutdown certain components)</td>
+    </tr>
+    <tr>
+      <td>3.</td>
+      <td>• Apps, OS: (Re-)Configure, Update</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• ECU: Flashing/Updating ECUs</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Apps: Notify/Wake Up through push</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• HW/SW: Read Inventory</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• HW/SW: access on resource (if Management Object is defined)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• User: Update scheduling</td>
+    </tr>
+    <tr>
+      <td>4.</td>
+      <td>The DM can only exist once per vehicle. But it is split into its functional groups (subjects). A hierarchical design of distributed DMs in a vehicle might be the subject of another design.</td>
+    </tr>
+    <tr>
+      <td>5.</td>
+      <td>• Authentication Set (MAC, UUID, Public Key)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• Cloud contact</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– Address of DM at the desired cloud</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– Certificate</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="318-operating-system-os-concept">3.1.8 Operating System (OS) concept:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Property</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1.</td>
+      <td>The Operating System is the backbone any platform where it operates including In-vehicle platform. We also consider drivers as being part of the Operating system.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><em>Operating System</em></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• consists of kernel and user space components</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• provides security</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• I/O and networking services to applications running in user space</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• runs on bare metal or hypervisor</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• OS kernel provides:</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– processes/thread management including scheduling</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– inter process communication</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– memory management</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– access to underlying HW</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– networking stacks</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– I/O stacks</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– security subsystem include:</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>∗ access control (e.g. MAC)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>∗ crypto and key management</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>∗ integrity measurement</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>∗ entropy pools and gatherig entropy from variouos sources It is also important to highlight that the security hardening of an OS scrucial to the platform and application security</td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td><strong>Process</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• data to/from underlying HW</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• data to/from networking</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• data to/from file system</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• user input</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• data exchanged between kernel and user space</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• data exchanged between processes</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• configuration data such as security policies, system settings,..</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong>Provide</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• System state information (running processes, CPU utilization, etc.)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• log data</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• debug or diagnostics data if certain debug features are enabled</td>
+    </tr>
+    <tr>
+      <td>3.</td>
+      <td>• <em>Access to underlying HW</em></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– peripherals</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– networking interfaces</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– any physical interface</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– HW based crypto and key management functionality</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– HW based TRNG (True Random Number Generator)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• <em>App-Runtime (transport layer)</em></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– Provide transport layer interface for Apps (inter-app communication, app to cloud backend communication)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– Provide system level services (file access, etc.)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• <em>Device Management Client (transport layer)</em></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– Provide transport layer interface for communication with device management (cloud backend)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• <em>5g Infrastructure (data link layer)</em></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– Connection Management</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• <em>Smartphone (data link layer)</em></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– Pairing</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– Connection Management</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– Data Transfer</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• <em>Net-IDS</em></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– Provides Interface to allow the Net-IDS to monitor network traffic.</td>
+    </tr>
+    <tr>
+      <td>4.</td>
+      <td>Different subsystems on a vehicle may be running their own OSes</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• whether on bare metal or virtualized</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• whether micro kernel based, unikernel based or rich OS such as Linux</td>
+    </tr>
+    <tr>
+      <td>5.</td>
+      <td>• build and runtime OS configuration</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– for process, resource management, memory management, functionality, security,..</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– policies (e.g. security)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– configuration of different processes</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>– networking configuration</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• User credentials</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <h1 id="32-the-5g-infrastructure"><strong>3.2. The 5G-Infrastructure</strong></h1>
+</blockquote>
+
+<p>The 5G infrastructure enables the communication between the connected vehicles and the cloud back-end. Based on the 5G standard discription, two component layers are structured as <em>control plane</em> and <em>user plane</em> which represents communication with cloud back-end and communication with the connected vehicle respectively.</p>
+
+<p>5G is the next generation of mobile communication technology. It is expected to be defined by theend of this decade and to be widely deployed in the early years of the next decade. As opposed to earlier 3G and 4G technologies, 3GPP conceptualized 5G to be more than another mobile broadband connectivity, covering a variety of use-cases and industries.
+5G was initially based on the conceptual composition as well as evolution of cellular technologies. This is because the different technologies have communication requirements, that are focused in a local (LAN) or wide area network (WAN) communication.</p>
+
+<p>In particular, IEEE’s 802.11p has been developed to support different types of wireless communications (e.g. PAN, LAN), but since it is based on CSMA/CA its performance degrades quickly as network load increases. This happens because a high number of transmitting stations will increase the number of collisions on the communication medium. Additionally, since it is was designed for short-range transmissions (transmission range up to 1km), many vendors introduce a multi-hop functionality to increase the transmission range. An example of multi-hop functionality is introduced in the European Cooperative Intelligent Transport System (C-ITS) protocol stack named as GeoNetworking. Furthermore, another technology that could not support as standalone broadband (e.g. WAN) communications is LTE. The main drawback of this technology is that every transmitted packet must traverse the infrastructure, meaning that each infrastructure failure will have a strong impact on connectivity of the entire network. Furthermore, even though broadband connections can be supported in LTE, scenarios where the infrastructure is not available due to outof-coverage are also quite probable. Finally, since LTE was designed to use radio resources in order to allow broadband communication, its extension in V2X connectivity where smaller data packets and higher bandwidth are required is suboptimal in terms of consumed resources still remains a great
+challenge.</p>
+
+<h2 id="321-evolved-packet-core-epc-concept">3.2.1 Evolved Packet Core (EPC) concept:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Property</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1.</td>
+      <td>EPC includes a number of components such as MME (Mobility Management Entity), SGW (Serving Gateway), PGW (Packet Data Network Gateway), HSS (HomeSubscriber Server). Each of these components have their own purpose</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• MME (Mobility Management Entity): located in the control plane and handles authentication, roaming and other management functions</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• SGW (Serving Gateway): handles routing user data packets</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• PGW (Packet Data Network Gateway): handles data connectivity with external networks. This is also where packet processing and lawful interception can take place</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• HSS (Home Subscriber Server): handles user subscription information</td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td>• MME (Mobility Management Entity): authentication data, roaming data</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• SGW (Serving Gateway): processes user data packets</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• PGW (Packet Data Network Gateway): policy enforcement, packet processing and filtering.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• HSS (Home Subscriber Server): processes and stores user ubscription data</td>
+    </tr>
+    <tr>
+      <td>3.</td>
+      <td>• MME interacts with eNodeB, SGW and HSS</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• SGW interacts with MME and PGW</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• PGW interacts with SGW and external network</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>• HSS interacts with MME</td>
+    </tr>
+    <tr>
+      <td>4.</td>
+      <td>There can be multiple instances</td>
+    </tr>
+    <tr>
+      <td>5.</td>
+      <td>Depends on the vendors and the products</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="3211-enodeb-baseband-unit-bbu-concept">3.2.1.1 eNodeB (Baseband Unit) (BBU) concept:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Property</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>1.</td>
+      <td>BBU (Baseband Unit) is responsible for processing baseband signals received from RRUs and further communicating data with EPC.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>2.</td>
+      <td>Processes baseband signals received from RRUs (Remote Radio Units) and other data from EPC</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>3.</td>
+      <td>Interacts with RRUs and EPC</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>4.</td>
+      <td>There can be multiple instances</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>5.</td>
+      <td>Depends on the vendors and the products</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="3212-enodeb-remote-radio-units-rru-concept">3.2.1.2 eNodeB (Remote Radio Units) (RRU) concept:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Property</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>1.</td>
+      <td>Interacts with user equipment by using a signaling protocol and relays baseband signals to BBUs for further processing</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>2.</td>
+      <td>Signaling data</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>3.</td>
+      <td>Interacts with user equipment and BBUs</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>4.</td>
+      <td>Multiple instances</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>5.</td>
+      <td>Depends on the vendors and the products</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <h1 id="33-cloud-back-end"><strong>3.3. Cloud back-end</strong></h1>
+</blockquote>
+
+<p>The cloud back-end provides service components to the connected vehicle by making sure a reliable and safe functionality according to the pre-defiened operation. Just like the In-vehicle platform, the cloud back-end is composed of multiple layers:</p>
+
+<p><strong>Core Layer</strong>: the core layer fuctions as</p>
+<ul>
+  <li>central back-end applciations</li>
+  <li>messaging infrastructure</li>
+  <li>control the message flow from and to the connected vehicles, and</li>
+  <li>device update management and data management.</li>
+</ul>
+
+<p><strong>Data Analytic &amp; Visualization Layer</strong>: this layer analyzis and visualizes the data transmitted by the vehicle based on the functionalities of the core layer.</p>
+
+<p><strong>Application Layer</strong>: In general, applications that are deployed on in-vehicle platforms require a cloud back-end counterpart. Often, applications in the back-end are provided by third parties allowing vehicle owners to aquire certain functionalities. The market place is also accessible for developers and serivce providers to register and upload applications. The original equipment manufacturers (OEM s) has the access and controls on contents of the market place.</p>
+
+<h2 id="331-message-gateway-concept">3.3.1 Message Gateway concept:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Property</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>1.</td>
+      <td>• Serves as central messaging hub</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Provides a set of micro services that transport messages from the car to the other components within the APPSTACLE backend and vice versa</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Implements routing and brokering mechanisms</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>2.</td>
+      <td><strong>Input and Output</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Telemetry data</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Event messages</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Command &amp; control messages</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Software updates</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Each message type may have a different quality of service level, depending on the configuration of the system</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><strong>Messaging Protocols</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• <em>MQTT</em></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Publish/subscribe model</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Implements own security model</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• <em>HTTP (REST-based)</em></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– GET, SET, PUT, DELETE</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• <em>Other protocols</em></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>3.</td>
+      <td>• Receiving and routing messages to the correct recipient</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Providing or leveraging identity management for connected devices</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>4.</td>
+      <td>• There exists only a single instance within the cloud backend</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>5.</td>
+      <td>• Deployment configuration regarding micro services:</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– External IP addresses</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Ports</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Connection to other services, e.g, identity management, service bus, etc.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="332-device-management-backend-concept">3.3.2 Device Management Backend concept:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Property</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>1.</td>
+      <td>• Managing the software stack on the individual devices</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Responsible for distributing the sotware artifacts to the devices</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Steering software rollout campaigns for large sets of devices</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>2.</td>
+      <td>• It provides arbitrary software and data artifacts that are stored in one or multiple repositories</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>3.</td>
+      <td><strong>Input</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• It interacts either with an app store or a backend service that is provided by the OEM</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• It receives commands that initiate the change of software stack of one or multiple devices</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><strong>Output</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• It sends software and data artifacts to one or multiple devices</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• The outbound communication is ideally conducted via the messaging gateway, managing the packaging according to the according protocol</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– HTTP</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– LWM2M</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– OMA-DM</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Other</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• The outbound communication may also be realised using direct communication to the devices</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>4.</td>
+      <td>• There exists only a single service within the cloud backend</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• The may exist multiple instances behind the service interface</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>5.</td>
+      <td>• The configuration for initialization is provided within deployment scripts</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• The device management resources are expected to be deployed into an existing cluster</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="333-report-generation-concept">3.3.3 Report Generation concept:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Property</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>1.</td>
+      <td>Report Generation is a component to generate business reports from the data collected by the cloud platform.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>2.</td>
+      <td>data collected by the cloud platform and, in particular, results from data analytics; output is a “report” (document)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>3.</td>
+      <td>The Report Generation component takes data from the Data Management (e.g.,results of the data analytics component) and creates reports, including visualizations,lists, documents, charts, etc.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>It is implemented based on Eclipse BIRT.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>Q: How is report generation triggered - periodically? by Apps? what interfaces exist?</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>Q: Who can request request reports? End-users (e.g., vehicle owner)? Service providers? OEMs?</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>Remark: It must be ensured that report generation cannot be misused by malicious users to violate data protection rules or to obtain confidential information without authorization.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>4.</td>
+      <td>Usually there is one logical report generation component per cloud instance, but potentially, there could be different report generation components for different kinds of reports.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>5.</td>
+      <td>• The configuration for initialization is provided within deployment scripts</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• The device management resources are expected to be deployed into an existing cluster</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="334-marketplace-backend-concept">3.3.4 Marketplace Backend concept:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Property</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>1.</td>
+      <td>• Stores and manages the software and data artifacts related to the apps that are installed on the in-vehicle platform</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Initiates and controls the communication with the app provider backends</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Interacts with potential payment providers, depending on the payment methods applied (Credit/Debit Card, SMS)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Stores the data related to registered users (vehicle owners and app developers)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Central hub for the interaction with app developers</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Provides app data to the in-vehicle platforms via the device management back-end</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Scan app software and data artifacts regarding vulnarabilities and malware</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Question: Should in-app transactions be possible?</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>2.</td>
+      <td><strong>Process</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• User input via the Marketplace Frontend</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Vehicle owner core data (Name, Address, Supported payment methods, User vehicle mappings (1 User, N Vehicles))</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– App developer core data (Name, Company, Address, Supported payment methods, Apps provided)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Transactional data regarding buying and returning apps (Transaction ID, Transaction status, Payment method applied, Vehicle Identification Number, Version of the app transferred</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><strong>Provide</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Software and data artifacts that are provided by the app developers</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Software (Compiled source code)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Data (Licenses, Documentation, Version history, Supported in-vehicle software platforms, Supported in-vehicle hardware platforms)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– API/Frontend for app developer interaction (Transferring software and data artifacts to the backend, Receiving account and app related information, e.g. number of downloads or total revenue per app)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>3.</td>
+      <td><strong>Input</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Marketplace frontend (see informations listed above)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Payment provider backends (Handling of payment transactions)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• App developer backends (Receiving data and software artifacts) Output</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Marketplace frontend (Deliver data requested by the frontend, e.g., results for search queries)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• In-vehicle platforms, via Device Management component (Software and dataartifcats regarding specific apps)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• App developer backends (Transaction and evaluation data)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Identity Management (Requests for user authentication and authorisation)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>4.</td>
+      <td>• There should be only a single instance within the cloud backend</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>5.</td>
+      <td>• Deployment configuration regarding micro services</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– External IP addresses</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Ports</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Connection to other services, e.g, Identity Management</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="335-visualization-concept">3.3.5 Visualization concept:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Property</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>1.</td>
+      <td>The Visualization component creates graphical representations of time series data retrieved via the Data Management component. For example, the Visualization component can generate graph like representations of the evolution of telemetry data over time.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>2.</td>
+      <td><strong>Process</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Time series data (e.g., telemetry data, performance/monitoring data)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><strong>Provide</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Graphical representations that can be utilized for report generation</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>3.</td>
+      <td>• Data mangement component</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– retrieving time series data</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– sending representation for storage and use in report generation</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>4.</td>
+      <td>There should be at least one Visualization instance per Data Management instance because of scalability aspects. Multiple instances per data management instance are possible. <strong>Not sure here</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>5.</td>
+      <td>• Data source</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Dashboard information</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Metrics</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Representation style</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Layout information</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="336-marketplace-frontend-concept">3.3.6 Marketplace Frontend concept:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Property</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>1.</td>
+      <td>• Provides visual interface that enable the interaction with the Marketplace Backend</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Vehicle owners can search and order apps as well as initiate their transfer to the in-vehicle platform</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Allows app developers to access app storage and monitoring data</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Allows vechicle owners and app developers to edit their core data / profiles</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>2.</td>
+      <td><strong>Process</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Core data (vehicle owner and app developer) entered via the visual interface</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Query database regarding apps available for the specific in-vehicle platform</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Software and data artifacts send by the app developers</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Data referring to payment transaction, e.g., data exchange with payment providers</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><strong>Provide</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Visual interface depicts information regarding</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Vehicle owner and app developer core data</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– App transactions</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– App search query results</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>3.</td>
+      <td><strong>Input</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Vehicle owner</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Enter and update core data</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Fill out order forms</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Search apps via query masks</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• App developer</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Enter and update core data</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Upload apps</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Retrieve monitoring data</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><strong>Output</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Vehicle owner</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Display core data</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Display app search queries</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• App developer</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Display core data</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Display monitoring data</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>4.</td>
+      <td>• There exists only a single services within the backend</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• There might be several container instances behind this service</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>5.</td>
+      <td>• Deployment configuration regarding micro services</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– External IP addresses</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Ports</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Connection to other services, e.g, Marketplace Backend</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="337-data-management-concept">3.3.7 Data Management concept:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Property</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>1.</td>
+      <td>• Manages the data that is transferred from the in-vehicle platforms to the cloud backend</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><strong>Historical Data</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Provides storage mechanisms to persist historical sensor data</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Is indepedent of the storage technoligies applied</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Time series vs. transactional vs. analytical data bases</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Relational vs. object data bases</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><strong>Streaming Data</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• It assumed that only portions of the data transferred can actually be stored, due to the large volume</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Instead of storing the full set of data, it may be analysed on-the-fly</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Therefore data must be rerouted to corresponding systems</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>2.</td>
+      <td>• Sensor data that is collected by the in-vehicle platform and transmitted by the message gateway</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>3.</td>
+      <td><strong>Input</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Message Gateway</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Sends sensor data to the Data Management component</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Data Management component acts as a consumer</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><strong>Output</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Data bases</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Receive subset of data that is transferred via the Message Gateway</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Stream processing engines</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Receive full set of data that is transferred via the Message Gateway</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>4.</td>
+      <td>• There exists of a single vertically scaled instance within the cloud backend</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• It may be connected to multiple data bases and stream processing engines</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>5.</td>
+      <td>• Deployment configuration regarding micro services</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– External IP addresses</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Ports</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Connection to other services, e.g, Message Gateway and Big Data Analysis</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="338-identity-management-concept">3.3.8 Identity Management concept:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Property</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>1.</td>
+      <td>• Managing the identities of the entities within the connected car environment, such as:</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Vehicles</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Backend services within the following layers:</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>∗ Core Layer</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>∗ Data Analytic &amp; Visualization Layer</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>∗ Application Layer</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Marketplace users</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Authorization of vehicle access by marketplace users</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>2.</td>
+      <td>• Login data of the marketplace users</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Authentication data of backend services as well as vehices</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Authorization data of vehicles, backend services and marketplace users</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>3.</td>
+      <td>• Exchange of login data, authorization data and authentication data</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>4.</td>
+      <td>• There exists only a single instance within the cloud environment.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>5.</td>
+      <td>• The setup of the identity management component requires the awareness regarding the individual backend services.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Regarding the authentication and authorization of vehicles and marketplace users, specific mechanisms have to be selected and configured.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="339-device-representation-concept">3.3.9 Device Representation concept:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Property</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>1.</td>
+      <td>• Providing an abstraction between the physical devices, the vehicles, and their digital representations (digital twin)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Managing the state of the vehicles attached to the backend infrastructure   (reported vs. desired vs. current)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Providing a unified interface for accessing the information provided by the vehicles</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Organizing the digital twins for all vehicles attached to the backend infrastructure</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>2.</td>
+      <td>• Information provided by the physical devices, in particular sensor data</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>3.</td>
+      <td>• Synchronizing data between the physical devices and their digital representations</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Processing data provided by the physical devices</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>4.</td>
+      <td>• There exists only a single instance managing all digital twins referring to all cars within the connected car environment</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>5.</td>
+      <td>• The Device Representation component has to be connected to the message gateway</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• A digital twin is created for each connected vehicle added to the environment</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="3310-big-data-analysis-concept">3.3.10 Big Data Analysis concept:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Property</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>1.</td>
+      <td>• Vehicles provide large amounts of data that are is by the Data Management component.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Big data analysis provides insights, e.g., the properties and usage of individual vehicles as well as their interaction.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>2.</td>
+      <td>• It consumes data collected by the vehicles that is persisted by the Data Management component.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• This data serves as input for the analytical tasks, depending on the individual objectives.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• The analytical results are provided to Domain-specific services.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>3.</td>
+      <td>• Data is retrieved from the Data Management component.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Analytical tasks are initiated by Domain-specific Services.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>4.</td>
+      <td>• There may be multiple Big Data Analysis components within the environment.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>5.</td>
+      <td>• The Big Data Analysis component(s) have to be connected to the Data Management component as well as the Domain-specific Services.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• This includes deployment configuration data, such as:</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– External IP addresses</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Ports</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="3311-core-services-concept">3.3.11 Core Services concept:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Property</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>1.</td>
+      <td>• Provide an abstraction layer regarding the access of the connected vehicles within in the environment.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• The focus is especially on the sending messages to and receiving messages from the connected vehicles.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Therefore, it relies on the functionality provided by the Message Gateway component.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Potentially restrict the access of Domain-specific Services.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>2.</td>
+      <td>• It provides access to the information provided by the connected vehicles to the Domain-specific Services.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• It allows to send messages from Domain-specific Services to the connected vehicles.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>3.</td>
+      <td>• Consume data from the Message Gateway component and route it to the Domain-specific Services.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Consume messages from the Domain-specific Services and route them to the Message Gateway component.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>4.</td>
+      <td>• There exist different services but for each service a single instance.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>5.</td>
+      <td>• The Core Services have to be connected to the Message Gateway component as well as the Domain-specific services.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• This includes deployment configuration data, such as:</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– External IP addresses</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Ports</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="3312-domain-specific-services-concept">3.3.12 Domain-specific Services concept:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Property</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>1.</td>
+      <td>• The Domain-specific Services provide added value to the users of the APPSTACLE connected car environment.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• The provide selected functionalities that leverage the data as well as the communication provided by the connected vehicles.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>2.</td>
+      <td>• It consumes data that is provided the Core Services component.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• It accesses and synchronizes the state of the connected vehicles via the Device Representation component.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• It consumes aggregated data that is provided by the Big Data Analysis component.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>3.</td>
+      <td>• Accessing and consuming data that is provided by the components attached.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Sending messages to the connected vehicles.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>4.</td>
+      <td>• Domain-specific Services may be provided by third-party developers.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Therefore, there may exist a set of individual services which do not necessarily depend on each other.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>5.</td>
+      <td>• Depending on the use case, the individual services have to be connected to the Device Representation component, the Big Data Analysis component as well as the Core Services component.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• This configuration data includes:</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– External IP addresses</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Ports</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/ImageFile/CloudeArchitecture.png" alt="The general system architecture" /></p>
+
+<p><em>Figure 5. The above picture summurizes the the architectural concepts discussed so far.</em></p>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'idratherbewriting'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2019 Your company. All rights reserved. <br />
+ Site last generated: Dec 11, 2019 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

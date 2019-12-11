@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>9 Kuksa Cloud Platform | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Kuksa Documentation</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/M3SResearch/kuksadoc" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kuksa Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Kuksa</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">kuksa first release</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">kuksa second release</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the 9 Kuksa Cloud Platform page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="9 Kuksa Cloud Platform">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">9 Kuksa Cloud Platform</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/kuksaTraining1/kuksa cloud platform.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="9-kuksa-cloud-platform"><strong>9 Kuksa Cloud Platform</strong></h1>
+
+<h2 id="91-getting-started-with-the-cloud-platform">9.1 Getting started with the cloud platform</h2>
+
+<p>This repo <a href="https://github.com/eclipse/kuksa.cloud/tree/master/deployment">link</a> contains script directory and it’s subdirectories help to setup and deployment of the Kuksa cloud. These scripts assume a running Kubernetes cluster which can be configured using kubectl. More information regarding the parameters of the scripts can be found within the respective script file of the <a href="https://github.com/eclipse/kuksa.cloud/tree/master/deployment">link</a>.</p>
+
+<blockquote>
+  <h3 id="structure">Structure</h3>
+</blockquote>
+
+<p>The deployment scripts are divided into the following parts:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. Azure for Azure-specific configuration that provides the basis of Kubernetes.
+2. Eclipse hawkBit enables the deployment of the corresponding software update components, in particular the update server. Note that this step requires the installation of the command line tool kompose. Installation instructions can be found at http://kompose.io/
+3. Eclipse Hono enables the deployment of a messaging infrastructure.
+4. Kubernetes provides functions for the Kubernetes deployment of the Kuksa cloud.
+5. Utils scripts that are included by other parts of the deployment infrastructure (e.g. handling static IP-addresses for the services). It is possible to set static IP-addresses and DNS entries for deployed services. For more details on that configuration see the Readme.md file in the utils directory.
+</code></pre></div></div>
+
+<h2 id="-911-required-system-configuration-"><span style="color:red"> <em>9.1.1 Required System Configuration</em> </span></h2>
+
+<p>To get started, the requied infrastructures are:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Java 8
+Maven
+Spring-Boot and other dependencies(data-jpa, feign client,pagination)
+Vaadin
+Swagger (for Rest API documentation)
+</code></pre></div></div>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Just run AppStoreApplication.java class.Spring boot has an embedded Tomcat instance. Spring boot uses <em>Tomcat7</em> by default, if you change Tomcat version, you have to define these configuration in <em>pom.xml</em>. But you have a few options to have embedded web server deployment instead of Tomcat like Jetty(HTTP (Web) server and Java Servlet container) or Java EE Application Server. You have to configure these replacements from default to new ones in <em>pom.xml</em>. 
+For detail information, follow the <a href="https://github.com/eclipse/kuksa.cloud/tree/master/kuksa-appstore">link</a>.</p>
+
+<h2 id="-912-installing-and-testing-the-cloud-platform-"><span style="color:red"> <em>9.1.2 Installing and testing the Cloud platform</em> </span></h2>
+<h2 id="-913-installing-a-cloud-app-and-its-in-vehicle-app-"><span style="color:red"> <em>9.1.3 Installing a Cloud App and its In-Vehicle App</em> </span></h2>
+<h2 id="-914-testing-the-cloud-app-"><span style="color:red"> <em>9.1.4 Testing the Cloud App</em> </span></h2>
+
+<p>## 9.2 Configuring the Cloud platform</p>
+
+<ul>
+  <li>The Microsoft Azure Deployment contains the IP adresses and DNS names. This <a href="https://github.com/eclipse/kuksa.cloud/tree/master/deployment/azure">link</a> explains the deployment of Azure.</li>
+  <li>Similarly, the <a href="https://github.com/eclipse/kuksa.cloud/tree/master/deployment/eclipse-hawkbit">Eclipse hawkBit Deployment</a> repo link consists of neccessary deployment steps.</li>
+  <li>Deployment of Eclipse hawkBit can be found from the repo link <a href="https://github.com/eclipse/kuksa.cloud/tree/master/deployment/eclipse-hawkbit">here</a>.</li>
+  <li>Eclipse Hono Deployment is available from this <a href="https://github.com/eclipse/kuksa.cloud/tree/master/deployment/eclipse-hono">link</a>.</li>
+  <li>Kubernetes-specific functionality details can be accessed from the repo link <a href="https://github.com/eclipse/kuksa.cloud/tree/master/deployment/kubernetes">here</a>.</li>
+</ul>
+
+<h2 id="-93-overview-of-the-cloud-platform-and-its-architecture-"><span style="color:red"> <em>9.3 Overview of the Cloud platform and its architecture</em> </span></h2>
+
+<h2 id="-94-overview-of-the-kuksa-cloud-api-"><span style="color:red"> <em>9.4 Overview of the Kuksa Cloud API</em> </span></h2>
+
+<h2 id="95-marketplace-presentation-and-features">9.5 Marketplace presentation and features</h2>
+
+<blockquote>
+  <h2 id="marketplace-backend-concept">Marketplace Backend concept:</h2>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Property</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>1.</td>
+      <td>• Stores and manages the software and data artifacts related to the apps that are installed on the in-vehicle platform</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Initiates and controls the communication with the app provider backends</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Interacts with potential payment providers, depending on the payment methods applied (Credit/Debit Card, SMS)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Stores the data related to registered users (vehicle owners and app developers)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Central hub for the interaction with app developers</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Provides app data to the in-vehicle platforms via the device management back-end</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Scan app software and data artifacts regarding vulnarabilities and malware</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Question: Should in-app transactions be possible?</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>2.</td>
+      <td><strong>Process</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• User input via the Marketplace Frontend</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Vehicle owner core data (Name, Address, Supported payment methods, User vehicle mappings (1 User, N Vehicles))</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– App developer core data (Name, Company, Address, Supported payment methods, Apps provided)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Transactional data regarding buying and returning apps (Transaction ID, Transaction status, Payment method applied, Vehicle Identification Number, Version of the app transferred</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><strong>Provide</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Software and data artifacts that are provided by the app developers</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Software (Compiled source code)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Data (Licenses, Documentation, Version history, Supported in-vehicle software platforms, Supported in-vehicle hardware platforms)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– API/Frontend for app developer interaction (Transferring software and data artifacts to the backend, Receiving account and app related information, e.g. number of downloads or total revenue per app)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>3.</td>
+      <td><strong>Input</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Marketplace frontend (see informations listed above)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Payment provider backends (Handling of payment transactions)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• App developer backends (Receiving data and software artifacts) Output</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Marketplace frontend (Deliver data requested by the frontend, e.g., results for search queries)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• In-vehicle platforms, via Device Management component (Software and dataartifcats regarding specific apps)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• App developer backends (Transaction and evaluation data)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Identity Management (Requests for user authentication and authorisation)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>4.</td>
+      <td>• There should be only a single instance within the cloud backend</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>5.</td>
+      <td>• Deployment configuration regarding micro services</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– External IP addresses</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Ports</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Connection to other services, e.g, Identity Management</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <h2 id="marketplace-frontend-concept">Marketplace Frontend concept:</h2>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Property</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>1.</td>
+      <td>• Provides visual interface that enable the interaction with the Marketplace Backend</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Vehicle owners can search and order apps as well as initiate their transfer to the in-vehicle platform</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Allows app developers to access app storage and monitoring data</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Allows vechicle owners and app developers to edit their core data / profiles</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>2.</td>
+      <td><strong>Process</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Core data (vehicle owner and app developer) entered via the visual interface</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Query database regarding apps available for the specific in-vehicle platform</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Software and data artifacts send by the app developers</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Data referring to payment transaction, e.g., data exchange with payment providers</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><strong>Provide</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Visual interface depicts information regarding</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Vehicle owner and app developer core data</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– App transactions</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– App search query results</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>3.</td>
+      <td><strong>Input</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Vehicle owner</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Enter and update core data</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Fill out order forms</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Search apps via query masks</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• App developer</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Enter and update core data</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Upload apps</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Retrieve monitoring data</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><strong>Output</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• Vehicle owner</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Display core data</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Display app search queries</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• App developer</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Display core data</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Display monitoring data</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>4.</td>
+      <td>• There exists only a single services within the backend</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>• There might be several container instances behind this service</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>5.</td>
+      <td>• Deployment configuration regarding micro services</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– External IP addresses</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Ports</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>– Connection to other services, e.g, Marketplace Backend</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In addition:</p>
+
+<p>The Eclipse Kuksa Appstore contains:</p>
+
+<blockquote>
+  <h3 id="build-eclipse-kuksa-appstore">Build Eclipse Kuksa Appstore</h3>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Script:
+    build_kuksa_appstore.sh
+Purpose:
+    Build a Docker image for the Eclipse Kuksa Appstore and push it to a Docker registry
+Options:
+    DOCKER_REGISTRY_SERVER: Address of the Docker registry server, e.g. running on Microsoft Azure.
+    DOCKER_REGISTRY_USERNAME: Username to sign in to the Docker registry.
+    DOCKER_REGISTRY_PASSWORD: Password to sign in to the Docker registry.
+    DOCKER_REGISTRY_EMAIL: Email to sign in to the Docker registry.
+Stages:
+    Clone the Kuksa Git repository
+    Build with Maven
+    Build Docker image
+    Push Docker image to Docker registry
+    Final cleanup
+        Remove the clones Git repository
+</code></pre></div></div>
+
+<blockquote>
+  <h3 id="deploy-eclipse-kuksa-appstore">Deploy Eclipse Kuksa Appstore</h3>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Script:
+    deploy_kuksa_appstore.sh
+
+Purpose:
+    Deploys a Docker image for the Eclipse Kuksa Appstore on a Kubernetes cluster
+
+Options:
+    APPSTORE_USERNAME: The username to set for the admin user of the appstore
+    APPSTORE_PASSWORD: The password to set for the admin user of the appstore
+    HAWKBIT_HOST: The (cluster-internal) hostname of the hawkbit server to use in the appstore
+    HAWKBIT_PORT: The (cluster-internal) port number of the hawkbit server to use in the appstore
+    HAWKBIT_USERNAME: The username to be used by the appstore to authenticate with hawkbit.
+    HAWKBIT_PASSWORD: The password to be used by the appstore to authenticate with hawkbit.
+    DOCKER_REGISTRY_SERVER: Address of the Docker registry server, e.g. running on Microsoft Azure.
+    DOCKER_REGISTRY_USERNAME: Username to sign in to the Docker registry.
+    DOCKER_REGISTRY_PASSWORD: Password to sign in to the Docker registry.
+    DOCKER_REGISTRY_EMAIL: Email to sign in to the Docker registry.
+    DOCKER_REGISTRY_SECRET: Name of the secret to access to custom Docker registry. Note that the secret is created during the deploy process within the namespace extension.
+
+Notes:
+    Production mode is enabled for Vaadin.
+    H2 console is disabled.
+    The H2 database is persisted via a persistent volume claim.
+    The service uses a ClusterIP so it is only available behind the Ambassador gateway.
+</code></pre></div></div>
+
+
+
+    <div class="tags">
+        
+    </div>
+
+
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'idratherbewriting'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2019 Your company. All rights reserved. <br />
+ Site last generated: Dec 11, 2019 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>
